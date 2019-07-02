@@ -1,0 +1,50 @@
+{
+  "name": "biolucidaclient",
+  "version": "0.1.0",
+  "description": "MAPcore Biolucida JS Client",
+  "main": "build/biolucidaclient.js",
+  "files": [
+    "package.json",
+    "LICENSE",
+    "README.rst",
+    "build/biolucidaclient.js",
+    "build/biolucidaclient.js.map",
+    "static",
+    "webpack.config.js"
+  ],
+  "scripts": {
+    "build": "webpack --mode=none",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hsorby/mbfbiolucidajsclient.git"
+  },
+  "keywords": [
+    "library",
+    "physiome",
+    "bioengineering",
+    "modelling"
+  ],
+  "author": "Hugh Sorby <h.sorby@auckland.ac.nz>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/hsorby/mbfbiolucidajsclient/issues"
+  },
+  "homepage": "https://github.com/hsorby/mbfbiolucidajsclient",
+  "devDependencies": {
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "axios": "^0.19.0",
+    "babel-loader": "^8.0.5",
+    "babel-preset-minify": "^0.5.0",
+    "css-loader": "^2.1.1",
+    "file-loader": "^1.1.11",
+    "html-loader": "^0.5.5",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.1",
+    "xml2js": "^0.4.19"
+  },
+  "dependencies": {}
+}
