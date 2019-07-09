@@ -3,7 +3,6 @@ const axios = require('axios');
 exports.biolucidaclient = function()  {
 
   const endpoint = "biolucida/"
-  let secrets = require("./.secrets/therealmapcore.info")
   let token = undefined
 
   const image_endpoint = (image_id) => {
@@ -47,9 +46,9 @@ exports.biolucidaclient = function()  {
 
   this.authenticate = () => {
     let data = {
-         'username': secrets.username,
-	     'password': secrets.password,
-	     'token': secrets.token
+         'username': '$5$rounds=535000$m4nLKbmPy44SWnE7$XAViaOf03cYlZCRzboThCLyV00jK5P1xsk9SPElEt32',
+         'password': '$5$rounds=535000$sHTv/6fk8umKO0bO$wgbK5N8zjEyLCKlP1JT1ZPPHViv9ZiPaIMiP1bn/te6',
+         'token': 'anything-will-do'
     }
 	axios.post(endpoint + 'authenticate/', data
 	)
