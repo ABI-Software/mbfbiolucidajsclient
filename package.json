@@ -1,5 +1,5 @@
 {
-  "name": "biolucidaclient",
+  "name": "@abi-software/biolucidaclient",
   "version": "0.1.0",
   "description": "MAPcore Biolucida JS Client",
   "main": "build/biolucidaclient.js",
@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hsorby/mbfbiolucidajsclient.git"
+    "url": "git+https://github.com/ABI-Software/mbfbiolucidajsclient.git"
   },
   "keywords": [
     "library",
@@ -29,9 +29,9 @@
   "author": "Hugh Sorby <h.sorby@auckland.ac.nz>",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/hsorby/mbfbiolucidajsclient/issues"
+    "url": "https://github.com/ABI-Software/mbfbiolucidajsclient/issues"
   },
-  "homepage": "https://github.com/hsorby/mbfbiolucidajsclient",
+  "homepage": "https://github.com/ABI-Software/mbfbiolucidajsclient",
   "devDependencies": {
     "@babel/core": "^7.4.0",
     "@babel/preset-env": "^7.4.2",
