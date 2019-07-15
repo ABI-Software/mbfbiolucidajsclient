@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-exports.biolucidaclient = function()  {
+exports.biolucidaclient_module = function()  {
 
   const endpoint = "biolucida/"
   let token = undefined
