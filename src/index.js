@@ -13,6 +13,14 @@ exports.biolucidaclient_module = function()  {
     return endpoint + 'region/' + image_id + '/' + width + '-' + height + '-0-0-0-' + zoom
   }
 
+  const valid_response = (respone) => {
+    let valid = false;
+    if ("status" in respone && respone["status"] === "success") {
+      valid = true;
+    }
+    return valid;
+  }
+
   const get_image_info = (image_id) => {
     return axios.get(image_endpoint(image_id), {headers: {'token': token}}
     ).then( response => {
@@ -33,21 +41,27 @@ exports.biolucidaclient_module = function()  {
     });
   }
 
+
   this.get_thumbnail = (element, image_id) => {
-    get_image_info(image_id).then( image_info => {
-      let levels = image_info['levels']
-      let last_level_index = levels.length - 1
-      let last_level = levels[last_level_index]
-      get_region_data(image_id, last_level['w'], last_level['h'], last_level_index).then( image => {
-        element.src = "data:image/jpeg;base64," + image
-      })
+    get_image_info(image_id).then(image_info => {
+      if (valid_response(image_info)) {
+        let levels = image_info['levels']
+        let last_level_index = levels.length - 1
+        let last_level = levels[last_level_index]
+        get_region_data(image_id, last_level['w'], last_level['h'], last_level_index).then( image => {
+          element.src = "data:image/jpeg;base64," + image
+        })
+      } else {
+        console.log("------- Biolucida client get thumbnail request error ---------")
+        console.log(image_info)
+      }
     })
   }
 
   this.authenticate = () => {
     let data = {
-         'username': '$5$rounds=535000$m4nLKbmPy44SWnE7$XAViaOf03cYlZCRzboThCLyV00jK5P1xsk9SPElEt32',
-         'password': '$5$rounds=535000$sHTv/6fk8umKO0bO$wgbK5N8zjEyLCKlP1JT1ZPPHViv9ZiPaIMiP1bn/te6',
+         'username': 'major_user',
+         'password': 'password',
          'token': 'anything-will-do'
     }
 	axios.post(endpoint + 'authenticate/', data
