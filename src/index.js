@@ -57,29 +57,4 @@ exports.biolucidaclient_module = function()  {
       }
     })
   }
-
-  this.authenticate = () => {
-    let data = {
-         'username': 'major_user',
-         'password': 'password',
-         'token': 'anything-will-do'
-    }
-	axios.post(endpoint + 'authenticate/', data
-	)
-	.then(function (response) {
-	  token = response.data.token
-    })
-    .catch(function (error) {
-      console.log("------- Biolucida client authenticate request error ---------")
-      console.log(error);
-    })
-    .then(function () {
-    });
-  }
-
-  const initialise = () => {
-    this.authenticate();
-  }
-
-  initialise();
 }
